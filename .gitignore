@@ -9,3 +9,5 @@ node_modules
 .npm
 # Optional REPL history
 .npm/_repl
+
+*.out
