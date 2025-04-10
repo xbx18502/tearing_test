@@ -1,0 +1,11 @@
+# for typescript
+# compiled output
+lib
+# dependency directory
+node_modules
+# TypeScript v1 declaration files
+*.d.ts
+# Optional npm cache directory
+.npm
+# Optional REPL history
+.npm/_repl
