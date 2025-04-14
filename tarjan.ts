@@ -176,12 +176,16 @@ export class TarjanSCC {
    * @param scc 节点到其 SCC ID 的映射数组。
    * @returns 重排后的矩阵 g'。如果出错则可能返回原始矩阵 g。
    */
-  public reorder(adjacencyList: number[][], g: number[][], scc: number[]): number[][] {
+  public reorder(adjacencyList: number[][], g: number[][], scc: number[]): 
+  {reorderedG: number[][], rowPermutation: number[], colPermutation: number[]} {
     const matrixSize = g.length; // n (例如 7)
-    if (matrixSize === 0) return [];
+    
+    if (matrixSize === 0) {
+      return { reorderedG: [], rowPermutation: [], colPermutation: [] }; // 返回空矩阵和置换
+    }
     if (!g.every(row => row.length === matrixSize)) {
       console.error("错误: 输入矩阵 g 不是方阵。");
-      return g;
+      return { reorderedG: g, rowPermutation: [], colPermutation: [] }; // 返回原始矩阵
     }
 
     // 预期节点数，基于映射假设
@@ -191,11 +195,11 @@ export class TarjanSCC {
     // 基础验证 (可以根据需要调整严格程度)
     if (scc.length === 0) {
       console.error("错误: SCC 数组为空。");
-      return g;
+      return { reorderedG: g, rowPermutation: [], colPermutation: [] }; // 返回原始矩阵
     }
     if (numNodes === 0) {
       console.warn("警告: adjacencyList 为空，无法进行重排。");
-      return g;
+      return { reorderedG: g, rowPermutation: [], colPermutation: [] }; // 返回原始矩阵
     }
     // 可选：检查 scc 数组长度是否符合预期
     if (scc.length !== numNodes) {
@@ -209,7 +213,7 @@ export class TarjanSCC {
     const maxSccId = scc.reduce((maxId, currentId) => Math.max(maxId, currentId), -1);
     if (maxSccId < 0) {
       console.error("错误: 未找到有效的 SCC ID (>= 0)。");
-      return g;
+      return { reorderedG: g, rowPermutation: [], colPermutation: [] }; // 返回原始矩阵
     }
     const numSCCs = maxSccId + 1;
 
@@ -250,7 +254,9 @@ export class TarjanSCC {
         queue.push(i);
       }
     }
-
+// --- 3. 生成行和列的置换 ---
+const rowPermutation: number[] = []; // 不需要预设大小，动态添加
+const colPermutation: number[] = [];
     const topologicalOrderSCC: number[] = [];
     while (queue.length > 0) {
       const sccU = queue.shift()!; // Dequeue
@@ -268,12 +274,9 @@ export class TarjanSCC {
     if (topologicalOrderSCC.length !== numSCCs) {
       console.error("错误: SCC 缩点图中检测到环。无法进行拓扑排序以获得 BTF。");
       // BTF 要求缩点图是 DAG
-      return g;
+      return { reorderedG: g, rowPermutation: [], colPermutation: [] }; // 返回原始矩阵
     }
     topologicalOrderSCC.reverse(); // 反转拓扑排序结果
-    // --- 3. 生成行和列的置换 ---
-    const rowPermutation: number[] = []; // 不需要预设大小，动态添加
-    const colPermutation: number[] = [];
 
     // 遍历拓扑排序后的 SCC
     for (const currentSccId of topologicalOrderSCC) {
@@ -299,7 +302,7 @@ export class TarjanSCC {
       console.error(`错误: 生成的置换不完整。行数: ${rowPermutation.length}/${matrixSize}, 列数: ${colPermutation.length}/${matrixSize}。请检查映射假设或输入数据。`);
       console.error("生成的行置换:", rowPermutation);
       console.error("生成的列置换:", colPermutation);
-      return g; // 返回原始矩阵，因为无法正确重排
+      return { reorderedG: g, rowPermutation: [], colPermutation: [] }; // 返回原始矩阵，因为无法正确重排
     }
 
 
@@ -313,7 +316,7 @@ export class TarjanSCC {
       }
     }
 
-    return reorderedG;
+    return {reorderedG, rowPermutation, colPermutation};
   }
 }
 
@@ -398,11 +401,16 @@ function test() {
 
   const components = tarjan.strong(maximumPerfectMatching);
   console.log("强连通分量:", components);
-  const reorderedGraph = tarjan.reorder(maximumPerfectMatching, originalGraph, components);
+  const reorderResult = tarjan.reorder(maximumPerfectMatching, originalGraph, components);
+  const reorderedGraph = reorderResult.reorderedG;
+  const rowPermutation = reorderResult.rowPermutation;
+  const colPermutation = reorderResult.colPermutation;
   console.log("重排序结果");
   for (let u = 0; u < reorderedGraph.length; u++) {
     console.log(reorderedGraph[u].join(" "));
   }
+  console.log("行置换:", rowPermutation);
+  console.log("列置换:", colPermutation);
 }
 
 test();
