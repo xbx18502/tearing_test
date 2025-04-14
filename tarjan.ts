@@ -72,23 +72,15 @@ export class TarjanSCC {
   }
 
   /**
- * 创建二分图的最大完美匹配，并返回边翻转后的邻接矩阵
- * @param g 二分图的邻接矩阵，g[i][j]=1 表示从左侧节点i到右侧节点j有一条边
- * @returns 翻转后的邻接矩阵，匹配中的边方向被反转
- */
+  * 创建二分图的最大完美匹配，并返回转换后的邻接表表示的有向图
+  * @param g 二分图的邻接矩阵，g[i][j]=1 表示从左侧节点i(方程)到右侧节点j(变量)有一条边
+  * @returns 转换后的邻接表表示的有向图，其中匹配边方向被反转
+  */
   public createMaximumPerfectMatching(g: number[][]): number[][] {
-    const leftSize = g.length;
-    const rightSize = g[0].length;
+    const leftSize = g.length;    // 左侧节点数量（方程数）
+    const rightSize = g[0].length; // 右侧节点数量（变量数）
 
-    // 复制原邻接矩阵，避免修改原始数据
-    const result: number[][] = Array.from({ length: leftSize }, () => Array(rightSize).fill(0));
-    for (let i = 0; i < leftSize; i++) {
-      for (let j = 0; j < rightSize; j++) {
-        result[i][j] = g[i][j];
-      }
-    }
-
-    // 存储匹配关系，match[右侧节点索引] = 与之匹配的左侧节点
+    // 存储匹配关系，match[右侧节点索引] = 与之匹配的左侧节点，初始为-1表示未匹配
     const match: number[] = Array(rightSize).fill(-1);
 
     // 用于DFS的访问标记
@@ -111,51 +103,48 @@ export class TarjanSCC {
       console.warn("警告：未找到完美匹配，返回的是最大匹配");
     }
 
-    // 根据匹配关系翻转边的方向
-    // 创建一个新的方向翻转后的邻接矩阵
-    const flippedResult: number[][] = Array.from({ length: rightSize }, () => Array(leftSize).fill(0));
-
-    for (let v = 0; v < rightSize; v++) {
-      if (match[v] !== -1) {
-        const u = match[v];
-        // 翻转匹配边的方向：(u,v) 变为 (v,u)
-        flippedResult[v][u] = 1;
-      }
-    }
-
-
+    // 创建邻接表表示的有向图
+    // 总节点数为方程数+变量数
     const adjacencyList: number[][] = Array.from({ length: leftSize + rightSize }, () => []);
+
+    // 构建有向图：
+    // 1. 对于匹配边：从变量指向方程（方向翻转）
+    // 2. 对于非匹配边：从方程指向变量（原方向）
+
+    // 处理非匹配边：从方程(u)指向变量(v+leftSize)
     for (let u = 0; u < leftSize; u++) {
       for (let v = 0; v < rightSize; v++) {
-        if (result[u][v] === 1 && match[v] !== u) {
-          // 如果u和v之间有边且不是匹配边，则添加到邻接表
-          adjacencyList[u].push(v + leftSize); // 将右侧节点索引偏移
+        if (g[u][v] === 1 && match[v] !== u) {
+          // 如果u和v之间有边且不是匹配边，保持原方向
+          adjacencyList[u].push(v + leftSize);
         }
       }
     }
-    // 将匹配边添加到邻接表
+
+    // 处理匹配边：从变量(v+leftSize)指向方程(u)
     for (let v = 0; v < rightSize; v++) {
       if (match[v] !== -1) {
         const u = match[v];
-        adjacencyList[v + leftSize].push(u); // 添加匹配边
-
+        // 翻转匹配边的方向：从变量指向方程
+        adjacencyList[v + leftSize].push(u);
       }
     }
+
     return adjacencyList;
 
     /**
      * DFS查找增广路径
-     * @param u 当前左侧节点
+     * @param u 当前左侧节点（方程）
      * @returns 是否找到增广路径
      */
     function dfs(u: number): boolean {
       if (visited[u]) return false;
       visited[u] = true;
 
-      // 尝试从u到右侧每个节点连接
+      // 尝试从u到右侧每个节点v连接
       for (let v = 0; v < rightSize; v++) {
-        // 检查是否有从u到右侧节点v的边
-        if (result[u][v] === 1) {
+        // 检查是否有从u到v的边
+        if (g[u][v] === 1) {
           // 如果右侧节点v未匹配或者v的当前匹配可以找到其他选择
           if (match[v] === -1 || dfs(match[v])) {
             // 建立新的匹配
@@ -167,50 +156,164 @@ export class TarjanSCC {
 
       return false;
     }
-    
-
   }
 
-  public sortByFrequencyAndValue(arr: number[]): number[] {
-    // 1. 统计每个数字出现的次数
-    const frequencyMap: Map<number, number> = new Map();
-    for (const num of arr) {
-      frequencyMap.set(num, (frequencyMap.get(num) || 0) + 1);
-    }
-  
-    // 2. 创建一个包含原始数组下标的数组
-    const indices = arr.map((_, index) => index);
-  
-    // 3. 根据出现次数和值进行排序
-    indices.sort((a, b) => {
-      const frequencyA = frequencyMap.get(arr[a])!;
-      const frequencyB = frequencyMap.get(arr[b])!;
-  
-      if (frequencyA !== frequencyB) {
-        return frequencyA - frequencyB; // 出现次数小的排前面
-      } else {
-        return arr[a] - arr[b]; // 出现次数相同，值小的排前面
-      }
-    });
-  
-    return indices;
-  }
 
-  public reorder(arr: number[], g: number[][]): number[][] {
-    const sortedIndices_row = this.sortByFrequencyAndValue(arr.slice(0,g.length));
-    let sortedGraph: number[][] = [];
-    for (let i = 0; i < g.length; i++) {
-      sortedGraph[i] = g[sortedIndices_row[i]];
+
+
+  /**
+   * 根据相关图的SCC拓扑排序，重排原始方程矩阵g以获得块三角形式(BTF)。
+   *
+   * 关键假设:
+   * - g: 原始 n x n 矩阵 (例如 7x7)。
+   * - adjacencyList: 描述依赖关系的图 (例如 2n 个节点)。
+   * - scc: 长度为 2n 的数组, scc[i] 是节点 i 的 SCC ID。
+   * - 映射: 节点 0..n-1 映射到 g 的行 0..n-1。
+   * 节点 n..2n-1 映射到 g 的列 0..n-1 (节点 k -> 列 k-n)。
+   *
+   * @param adjacencyList 依赖关系图的邻接表。
+   * @param g 要重排的原始 n x n 矩阵。
+   * @param scc 节点到其 SCC ID 的映射数组。
+   * @returns 重排后的矩阵 g'。如果出错则可能返回原始矩阵 g。
+   */
+  public reorder(adjacencyList: number[][], g: number[][], scc: number[]): number[][] {
+    const matrixSize = g.length; // n (例如 7)
+    if (matrixSize === 0) return [];
+    if (!g.every(row => row.length === matrixSize)) {
+      console.error("错误: 输入矩阵 g 不是方阵。");
+      return g;
     }
-    const sortedIndices_column = this.sortByFrequencyAndValue(arr.slice(g.length,arr.length));
-    let sortedGraph2: number[][] = Array.from({ length: g.length }, () => Array(g[0].length).fill(0));
-    for (let i = 0; i < g.length; i++) {
-      for (let j = 0; j < g[i].length; j++) {
-        sortedGraph2[i][j] = sortedGraph[i][sortedIndices_column[j]];
+
+    // 预期节点数，基于映射假设
+    const expectedNodes = 2 * matrixSize;
+    const numNodes = adjacencyList.length; // 图中的实际节点数
+
+    // 基础验证 (可以根据需要调整严格程度)
+    if (scc.length === 0) {
+      console.error("错误: SCC 数组为空。");
+      return g;
+    }
+    if (numNodes === 0) {
+      console.warn("警告: adjacencyList 为空，无法进行重排。");
+      return g;
+    }
+    // 可选：检查 scc 数组长度是否符合预期
+    if (scc.length !== numNodes) {
+      console.warn(`警告: scc 数组长度 (${scc.length}) 与 adjacencyList 节点数 (${numNodes}) 不匹配。将基于 scc 数组的长度和内容继续，但这可能指示输入有问题。`);
+      // 如果 scc 长度决定了节点范围，可能需要调整 numNodes
+      // numNodes = scc.length; // 取决于哪个是更可靠的来源
+    }
+
+
+    // --- 1. 构建 SCC 图（缩点图） ---
+    const maxSccId = scc.reduce((maxId, currentId) => Math.max(maxId, currentId), -1);
+    if (maxSccId < 0) {
+      console.error("错误: 未找到有效的 SCC ID (>= 0)。");
+      return g;
+    }
+    const numSCCs = maxSccId + 1;
+
+    const sccAdj: Set<number>[] = new Array(numSCCs).fill(0).map(() => new Set<number>());
+    const sccInDegree: number[] = new Array(numSCCs).fill(0);
+
+    for (let u = 0; u < numNodes; u++) {
+      // 检查 u 是否在 scc 数组的有效范围内
+      if (u >= scc.length) continue;
+      const sccU = scc[u];
+      // 检查 sccU 是否有效
+      if (sccU < 0 || sccU >= numSCCs) continue;
+
+      // 检查 u 是否在 adjacencyList 的有效范围内
+      if (u >= adjacencyList.length) continue;
+
+      for (const v of adjacencyList[u]) {
+        // 检查 v 是否在 scc 数组的有效范围内
+        if (v < 0 || v >= scc.length) continue;
+        const sccV = scc[v];
+        // 检查 sccV 是否有效
+        if (sccV < 0 || sccV >= numSCCs) continue;
+
+        // 如果是跨 SCC 的边，则在缩点图中添加边
+        if (sccU !== sccV) {
+          if (!sccAdj[sccU].has(sccV)) {
+            sccAdj[sccU].add(sccV);
+            sccInDegree[sccV]++;
+          }
+        }
       }
     }
-    // 4. 返回排序后的数组
-    return sortedGraph2;
+
+    // --- 2. 拓扑排序 SCC (Kahn 算法) ---
+    const queue: number[] = []; // 使用数组模拟队列
+    for (let i = 0; i < numSCCs; i++) {
+      if (sccInDegree[i] === 0) {
+        queue.push(i);
+      }
+    }
+
+    const topologicalOrderSCC: number[] = [];
+    while (queue.length > 0) {
+      const sccU = queue.shift()!; // Dequeue
+      topologicalOrderSCC.push(sccU);
+
+      for (const sccV of sccAdj[sccU]) {
+        sccInDegree[sccV]--;
+        if (sccInDegree[sccV] === 0) {
+          queue.push(sccV);
+        }
+      }
+    }
+
+    // 检查 SCC 图中是否有环
+    if (topologicalOrderSCC.length !== numSCCs) {
+      console.error("错误: SCC 缩点图中检测到环。无法进行拓扑排序以获得 BTF。");
+      // BTF 要求缩点图是 DAG
+      return g;
+    }
+    topologicalOrderSCC.reverse(); // 反转拓扑排序结果
+    // --- 3. 生成行和列的置换 ---
+    const rowPermutation: number[] = []; // 不需要预设大小，动态添加
+    const colPermutation: number[] = [];
+
+    // 遍历拓扑排序后的 SCC
+    for (const currentSccId of topologicalOrderSCC) {
+      // 找出属于当前 SCC 的行 (节点 0 到 n-1)
+      for (let r = 0; r < matrixSize; r++) {
+        // 检查 r 是否在 scc 数组范围内
+        if (r < scc.length && scc[r] === currentSccId) {
+          rowPermutation.push(r);
+        }
+      }
+      // 找出属于当前 SCC 的列 (节点 n 到 2n-1)
+      for (let c = 0; c < matrixSize; c++) {
+        const nodeIndex = c + matrixSize; // 映射到节点索引
+        // 检查 nodeIndex 是否在 scc 数组范围内
+        if (nodeIndex < scc.length && scc[nodeIndex] === currentSccId) {
+          colPermutation.push(c); // 添加的是列索引 c
+        }
+      }
+    }
+
+    // 验证置换是否包含了所有行和列
+    if (rowPermutation.length !== matrixSize || colPermutation.length !== matrixSize) {
+      console.error(`错误: 生成的置换不完整。行数: ${rowPermutation.length}/${matrixSize}, 列数: ${colPermutation.length}/${matrixSize}。请检查映射假设或输入数据。`);
+      console.error("生成的行置换:", rowPermutation);
+      console.error("生成的列置换:", colPermutation);
+      return g; // 返回原始矩阵，因为无法正确重排
+    }
+
+
+    // --- 4. 重排矩阵 g ---
+    const reorderedG: number[][] = new Array(matrixSize).fill(0).map(() => new Array(matrixSize).fill(0));
+    for (let i = 0; i < matrixSize; i++) { // 新矩阵的行索引
+      for (let j = 0; j < matrixSize; j++) { // 新矩阵的列索引
+        const originalRow = rowPermutation[i]; // 获取对应的原始行号
+        const originalCol = colPermutation[j]; // 获取对应的原始列号
+        reorderedG[i][j] = g[originalRow][originalCol];
+      }
+    }
+
+    return reorderedG;
   }
 }
 
@@ -251,19 +354,55 @@ let graph9: number[][] = [
   [0, 0, 0, 0, 1],
   [0, 1, 0, 0, 1]
 ]
+
+let graph10: number[][] = [
+  [0, 0, 1, 0, 0, 0, 0],
+  [1, 1, 0, 0, 0, 1, 0],
+  [1, 0, 1, 0, 0, 1, 0],
+  [0, 1, 0, 1, 0, 0, 1],
+  [1, 0, 0, 1, 1, 0, 0],
+  [0, 0, 0, 1, 1, 0, 0],
+  [1, 1, 1, 0, 0, 0, 0]
+]
+
+let graph11: number[][] = [
+  [1],
+  [2, 4],
+  [0, 3, 5],
+  [2],
+  [5, 6],
+  [4, 6, 7],
+  [7],
+  [8],
+  [6]
+]
+
+let graph12: number[][] = [
+  [1, 0, 1, 0],
+  [0, 0, 0, 1],
+  [0, 1, 0, 1],
+  [0, 1, 1, 0]
+]
 // const components1 = findStrongConnectedComponents(graph7);
 
 // console.log("每个节点所属的强连通分量编号:", components1);
 function test() {
-  const originalGraph = graph9;
+  const originalGraph = graph10;
   const tarjan = new TarjanSCC();
   const maximumPerfectMatching = tarjan.createMaximumPerfectMatching(originalGraph);
-  console.log("原邻接矩阵:", originalGraph);
+  console.log("原邻接矩阵:\n");
+  for (let u = 0; u < originalGraph.length; u++) {
+    console.log(originalGraph[u].join(" "));
+  }
   console.log("翻转后的邻接矩阵:", maximumPerfectMatching);
 
   const components = tarjan.strong(maximumPerfectMatching);
   console.log("强连通分量:", components);
-  console.log("重排序结果",tarjan.reorder(components,originalGraph));
+  const reorderedGraph = tarjan.reorder(maximumPerfectMatching, originalGraph, components);
+  console.log("重排序结果");
+  for (let u = 0; u < reorderedGraph.length; u++) {
+    console.log(reorderedGraph[u].join(" "));
+  }
 }
 
 test();
