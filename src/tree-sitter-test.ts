@@ -37,14 +37,30 @@ function treeToJson(node: Parser.SyntaxNode): any {
 
     return result;
 }
+function treeToJsonWithText(node: Parser.SyntaxNode, sourceCode: string): any {
+    const result: any = {
+        type: node.type,
+        startPosition: node.startPosition,
+        endPosition: node.endPosition,
+        text: node.text // 获取节点的原始文本内容
+    };
 
-const jsonAst = treeToJson(tree.rootNode);
-const jsonString = JSON.stringify(jsonAst, null, 2);
+    const children = node.namedChildren.map(child => treeToJsonWithText(child, sourceCode));
+    if (children.length > 0) {
+        result.children = children;
+    }
+
+    return result;
+}
+// const jsonAst = treeToJson(tree.rootNode);
+const jsonAstWithText = treeToJsonWithText(tree.rootNode, sourceCode);
+// const jsonString = JSON.stringify(jsonAst, null, 2);
+const jsonString = JSON.stringify(jsonAstWithText, null, 2);
 const filePath = '../example/ast.json'; // 你想要保存的文件名和路径
 
 try {
-  fs.writeFileSync(filePath, jsonString, 'utf-8');
-  console.log(`AST 已保存到 ${filePath}`);
+    fs.writeFileSync(filePath, jsonString, 'utf-8');
+    console.log(`AST 已保存到 ${filePath}`);
 } catch (error) {
-  console.error('保存 AST 到文件时发生错误:', error);
+    console.error('保存 AST 到文件时发生错误:', error);
 }
