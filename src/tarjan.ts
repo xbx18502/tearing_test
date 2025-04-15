@@ -176,10 +176,9 @@ export class TarjanSCC {
    * @param scc 节点到其 SCC ID 的映射数组。
    * @returns 重排后的矩阵 g'。如果出错则可能返回原始矩阵 g。
    */
-  public reorder(adjacencyList: number[][], g: number[][], scc: number[]): 
-  {reorderedG: number[][], rowPermutation: number[], colPermutation: number[]} {
+  public reorder(adjacencyList: number[][], g: number[][], scc: number[]): { reorderedG: number[][], rowPermutation: number[], colPermutation: number[] } {
     const matrixSize = g.length; // n (例如 7)
-    
+
     if (matrixSize === 0) {
       return { reorderedG: [], rowPermutation: [], colPermutation: [] }; // 返回空矩阵和置换
     }
@@ -254,9 +253,9 @@ export class TarjanSCC {
         queue.push(i);
       }
     }
-// --- 3. 生成行和列的置换 ---
-const rowPermutation: number[] = []; // 不需要预设大小，动态添加
-const colPermutation: number[] = [];
+    // --- 3. 生成行和列的置换 ---
+    const rowPermutation: number[] = []; // 不需要预设大小，动态添加
+    const colPermutation: number[] = [];
     const topologicalOrderSCC: number[] = [];
     while (queue.length > 0) {
       const sccU = queue.shift()!; // Dequeue
@@ -316,7 +315,7 @@ const colPermutation: number[] = [];
       }
     }
 
-    return {reorderedG, rowPermutation, colPermutation};
+    return { reorderedG, rowPermutation, colPermutation };
   }
 }
 
@@ -393,7 +392,7 @@ function test() {
   const originalGraph = graph10;
   const tarjan = new TarjanSCC();
   const maximumPerfectMatching = tarjan.createMaximumPerfectMatching(originalGraph);
-  console.log("原邻接矩阵:\n");
+  console.log("原邻接矩阵:");
   for (let u = 0; u < originalGraph.length; u++) {
     console.log(originalGraph[u].join(" "));
   }

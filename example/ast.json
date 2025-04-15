@@ -1,0 +1,1342 @@
+{
+  "type": "StoredDefinition",
+  "startPosition": {
+    "row": 0,
+    "column": 0
+  },
+  "endPosition": {
+    "row": 0,
+    "column": 208
+  },
+  "children": [
+    {
+      "type": "ClassDefinitionClause",
+      "startPosition": {
+        "row": 0,
+        "column": 0
+      },
+      "endPosition": {
+        "row": 0,
+        "column": 207
+      },
+      "children": [
+        {
+          "type": "ClassDefinition",
+          "startPosition": {
+            "row": 0,
+            "column": 0
+          },
+          "endPosition": {
+            "row": 0,
+            "column": 205
+          },
+          "children": [
+            {
+              "type": "ClassPrefixes",
+              "startPosition": {
+                "row": 0,
+                "column": 0
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 5
+              }
+            },
+            {
+              "type": "LongClassSpecifier",
+              "startPosition": {
+                "row": 0,
+                "column": 6
+              },
+              "endPosition": {
+                "row": 0,
+                "column": 205
+              },
+              "children": [
+                {
+                  "type": "IDENT",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 6
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 14
+                  }
+                },
+                {
+                  "type": "InitialElementList",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 15
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 34
+                  },
+                  "children": [
+                    {
+                      "type": "NamedElementClause",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 15
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 34
+                      },
+                      "children": [
+                        {
+                          "type": "ComponentClause",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 15
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 33
+                          },
+                          "children": [
+                            {
+                              "type": "TypeSpecifier",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 15
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 19
+                              },
+                              "children": [
+                                {
+                                  "type": "Name",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 15
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 19
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 15
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 19
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "ComponentDeclaration",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 20
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 21
+                              },
+                              "children": [
+                                {
+                                  "type": "Declaration",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 20
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 21
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 20
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 21
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "ComponentDeclaration",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 23
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 24
+                              },
+                              "children": [
+                                {
+                                  "type": "Declaration",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 23
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 24
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 23
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 24
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "ComponentDeclaration",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 26
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 27
+                              },
+                              "children": [
+                                {
+                                  "type": "Declaration",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 26
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 27
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 26
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 27
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "ComponentDeclaration",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 29
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 30
+                              },
+                              "children": [
+                                {
+                                  "type": "Declaration",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 29
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 30
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 29
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 30
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "ComponentDeclaration",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 32
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 33
+                              },
+                              "children": [
+                                {
+                                  "type": "Declaration",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 32
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 33
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 32
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 33
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "EquationSection",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 35
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 192
+                  },
+                  "children": [
+                    {
+                      "type": "SimpleEquation",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 44
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 75
+                      },
+                      "children": [
+                        {
+                          "type": "FunctionCall",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 44
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 54
+                          },
+                          "children": [
+                            {
+                              "type": "ComponentReference",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 44
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 48
+                              },
+                              "children": [
+                                {
+                                  "type": "ComponentReferencePart",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 44
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 48
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 44
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 48
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "FunctionArguments",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 51
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 52
+                              },
+                              "children": [
+                                {
+                                  "type": "FunctionArgument",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 51
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 52
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "ComponentReference",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 51
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 52
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "ComponentReferencePart",
+                                          "startPosition": {
+                                            "row": 0,
+                                            "column": 51
+                                          },
+                                          "endPosition": {
+                                            "row": 0,
+                                            "column": 52
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "IDENT",
+                                              "startPosition": {
+                                                "row": 0,
+                                                "column": 51
+                                              },
+                                              "endPosition": {
+                                                "row": 0,
+                                                "column": 52
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "UnsignedIntegerLiteral",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 57
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 59
+                          },
+                          "children": [
+                            {
+                              "type": "UNSIGNED_INTEGER",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 57
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 59
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "DescriptionString",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 60
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 74
+                          },
+                          "children": [
+                            {
+                              "type": "StringLiteral",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 60
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 74
+                              },
+                              "children": [
+                                {
+                                  "type": "STRING",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 60
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 74
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SimpleEquation",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 76
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 107
+                      },
+                      "children": [
+                        {
+                          "type": "ComponentReference",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 76
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 77
+                          },
+                          "children": [
+                            {
+                              "type": "ComponentReferencePart",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 76
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 77
+                              },
+                              "children": [
+                                {
+                                  "type": "IDENT",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 76
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 77
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BinaryExpression",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 80
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 91
+                          },
+                          "children": [
+                            {
+                              "type": "ComponentReference",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 80
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 81
+                              },
+                              "children": [
+                                {
+                                  "type": "ComponentReferencePart",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 80
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 81
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 80
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 81
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "ParenthesizedExpression",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 83
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 91
+                              },
+                              "children": [
+                                {
+                                  "type": "BinaryExpression",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 85
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 89
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "ComponentReference",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 85
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 86
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "ComponentReferencePart",
+                                          "startPosition": {
+                                            "row": 0,
+                                            "column": 85
+                                          },
+                                          "endPosition": {
+                                            "row": 0,
+                                            "column": 86
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "IDENT",
+                                              "startPosition": {
+                                                "row": 0,
+                                                "column": 85
+                                              },
+                                              "endPosition": {
+                                                "row": 0,
+                                                "column": 86
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "ComponentReference",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 88
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 89
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "ComponentReferencePart",
+                                          "startPosition": {
+                                            "row": 0,
+                                            "column": 88
+                                          },
+                                          "endPosition": {
+                                            "row": 0,
+                                            "column": 89
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "IDENT",
+                                              "startPosition": {
+                                                "row": 0,
+                                                "column": 88
+                                              },
+                                              "endPosition": {
+                                                "row": 0,
+                                                "column": 89
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "DescriptionString",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 92
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 106
+                          },
+                          "children": [
+                            {
+                              "type": "StringLiteral",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 92
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 106
+                              },
+                              "children": [
+                                {
+                                  "type": "STRING",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 92
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 106
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SimpleEquation",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 108
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 132
+                      },
+                      "children": [
+                        {
+                          "type": "ComponentReference",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 108
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 109
+                          },
+                          "children": [
+                            {
+                              "type": "ComponentReferencePart",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 108
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 109
+                              },
+                              "children": [
+                                {
+                                  "type": "IDENT",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 108
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 109
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BinaryExpression",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 112
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 116
+                          },
+                          "children": [
+                            {
+                              "type": "ComponentReference",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 112
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 113
+                              },
+                              "children": [
+                                {
+                                  "type": "ComponentReferencePart",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 112
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 113
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 112
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 113
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "UnsignedIntegerLiteral",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 115
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 116
+                              },
+                              "children": [
+                                {
+                                  "type": "UNSIGNED_INTEGER",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 115
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 116
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "DescriptionString",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 117
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 131
+                          },
+                          "children": [
+                            {
+                              "type": "StringLiteral",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 117
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 131
+                              },
+                              "children": [
+                                {
+                                  "type": "STRING",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 117
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 131
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SimpleEquation",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 133
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 163
+                      },
+                      "children": [
+                        {
+                          "type": "ComponentReference",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 133
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 134
+                          },
+                          "children": [
+                            {
+                              "type": "ComponentReferencePart",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 133
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 134
+                              },
+                              "children": [
+                                {
+                                  "type": "IDENT",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 133
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 134
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "FunctionCall",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 137
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 147
+                          },
+                          "children": [
+                            {
+                              "type": "ComponentReference",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 137
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 141
+                              },
+                              "children": [
+                                {
+                                  "type": "ComponentReferencePart",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 137
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 141
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 137
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 141
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "FunctionArguments",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 144
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 145
+                              },
+                              "children": [
+                                {
+                                  "type": "FunctionArgument",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 144
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 145
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "ComponentReference",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 144
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 145
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "ComponentReferencePart",
+                                          "startPosition": {
+                                            "row": 0,
+                                            "column": 144
+                                          },
+                                          "endPosition": {
+                                            "row": 0,
+                                            "column": 145
+                                          },
+                                          "children": [
+                                            {
+                                              "type": "IDENT",
+                                              "startPosition": {
+                                                "row": 0,
+                                                "column": 144
+                                              },
+                                              "endPosition": {
+                                                "row": 0,
+                                                "column": 145
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "DescriptionString",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 148
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 162
+                          },
+                          "children": [
+                            {
+                              "type": "StringLiteral",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 148
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 162
+                              },
+                              "children": [
+                                {
+                                  "type": "STRING",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 148
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 162
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "SimpleEquation",
+                      "startPosition": {
+                        "row": 0,
+                        "column": 164
+                      },
+                      "endPosition": {
+                        "row": 0,
+                        "column": 192
+                      },
+                      "children": [
+                        {
+                          "type": "UnsignedIntegerLiteral",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 164
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 165
+                          },
+                          "children": [
+                            {
+                              "type": "UNSIGNED_INTEGER",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 164
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 165
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BinaryExpression",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 168
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 176
+                          },
+                          "children": [
+                            {
+                              "type": "BinaryExpression",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 168
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 172
+                              },
+                              "children": [
+                                {
+                                  "type": "ComponentReference",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 168
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 169
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "ComponentReferencePart",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 168
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 169
+                                      },
+                                      "children": [
+                                        {
+                                          "type": "IDENT",
+                                          "startPosition": {
+                                            "row": 0,
+                                            "column": 168
+                                          },
+                                          "endPosition": {
+                                            "row": 0,
+                                            "column": 169
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "UnsignedIntegerLiteral",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 171
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 172
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "UNSIGNED_INTEGER",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 171
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 172
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "ComponentReference",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 175
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 176
+                              },
+                              "children": [
+                                {
+                                  "type": "ComponentReferencePart",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 175
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 176
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "IDENT",
+                                      "startPosition": {
+                                        "row": 0,
+                                        "column": 175
+                                      },
+                                      "endPosition": {
+                                        "row": 0,
+                                        "column": 176
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "DescriptionString",
+                          "startPosition": {
+                            "row": 0,
+                            "column": 177
+                          },
+                          "endPosition": {
+                            "row": 0,
+                            "column": 191
+                          },
+                          "children": [
+                            {
+                              "type": "StringLiteral",
+                              "startPosition": {
+                                "row": 0,
+                                "column": 177
+                              },
+                              "endPosition": {
+                                "row": 0,
+                                "column": 191
+                              },
+                              "children": [
+                                {
+                                  "type": "STRING",
+                                  "startPosition": {
+                                    "row": 0,
+                                    "column": 177
+                                  },
+                                  "endPosition": {
+                                    "row": 0,
+                                    "column": 191
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "IDENT",
+                  "startPosition": {
+                    "row": 0,
+                    "column": 197
+                  },
+                  "endPosition": {
+                    "row": 0,
+                    "column": 205
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
