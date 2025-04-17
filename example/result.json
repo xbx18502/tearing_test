@@ -1,0 +1,167 @@
+{
+    "output": "mwAux.474",
+    "expression": {
+        "type": "binary_op",
+        "operator": "-",
+        "left": {
+            "type": "binary_op",
+            "operator": "+",
+            "left": {
+                "type": "binary_op",
+                "operator": "+",
+                "left": {
+                    "type": "binary_op",
+                    "operator": "+",
+                    "left": {
+                        "type": "binary_op",
+                        "operator": "*",
+                        "left": {
+                            "type": "binary_op",
+                            "operator": "-",
+                            "left": {
+                                "type": "var",
+                                "name": "mwAux.438"
+                            },
+                            "right": {
+                                "type": "binary_op",
+                                "operator": "*",
+                                "left": {
+                                    "type": "num",
+                                    "value": 0.03048374573278
+                                },
+                                "right": {
+                                    "type": "var",
+                                    "name": "mwAux.353"
+                                }
+                            }
+                        },
+                        "right": {
+                            "type": "var",
+                            "object": {
+                                "type": "var",
+                                "name": "Revolute1.R_rel.T"
+                            },
+                            "indices": [
+                                {
+                                    "type": "num",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "num",
+                                    "value": 1
+                                }
+                            ],
+                            "subnodes": []
+                        }
+                    },
+                    "right": {
+                        "type": "binary_op",
+                        "operator": "*",
+                        "left": {
+                            "type": "num",
+                            "value": 0.00595810724813
+                        },
+                        "right": {
+                            "type": "var",
+                            "name": "mwAux.450"
+                        }
+                    }
+                },
+                "right": {
+                    "type": "binary_op",
+                    "operator": "*",
+                    "left": {
+                        "type": "var",
+                        "name": "mwAux.463"
+                    },
+                    "right": {
+                        "type": "var",
+                        "object": {
+                            "type": "var",
+                            "name": "Revolute1.R_rel.T"
+                        },
+                        "indices": [
+                            {
+                                "type": "num",
+                                "value": 1
+                            },
+                            {
+                                "type": "num",
+                                "value": 2
+                            }
+                        ],
+                        "subnodes": []
+                    }
+                }
+            },
+            "right": {
+                "type": "binary_op",
+                "operator": "*",
+                "left": {
+                    "type": "binary_op",
+                    "operator": "+",
+                    "left": {
+                        "type": "binary_op",
+                        "operator": "*",
+                        "left": {
+                            "type": "unary_op",
+                            "operator": "-",
+                            "arg": {
+                                "type": "num",
+                                "value": 0.03048374573278
+                            }
+                        },
+                        "right": {
+                            "type": "var",
+                            "name": "mwAux.429"
+                        }
+                    },
+                    "right": {
+                        "type": "var",
+                        "name": "mwAux.468"
+                    }
+                },
+                "right": {
+                    "type": "var",
+                    "object": {
+                        "type": "var",
+                        "name": "Revolute1.R_rel.T"
+                    },
+                    "indices": [
+                        {
+                            "type": "num",
+                            "value": 1
+                        },
+                        {
+                            "type": "num",
+                            "value": 3
+                        }
+                    ],
+                    "subnodes": []
+                }
+            }
+        },
+        "right": {
+            "type": "binary_op",
+            "operator": "*",
+            "left": {
+                "type": "var",
+                "name": "mwAux.450"
+            },
+            "right": {
+                "type": "var",
+                "object": {
+                    "type": "var",
+                    "name": "LWheel1.body.r_AG_a"
+                },
+                "indices": [
+                    {
+                        "type": "num",
+                        "value": 2
+                    }
+                ],
+                "subnodes": []
+            }
+        }
+    }
+}
